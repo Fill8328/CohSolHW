@@ -1,22 +1,22 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetNumberTen {
-    public static String getNumberTen(double number, int radix){
+public class fromTenScaleTo {
+    public static String fromTenScaleTo (double number, int radix){
         double a = number;
         int b = radix;
-
 
         System.out.print(getInRadixInt((int)a,b) + ",");
         System.out.print(getInRadixDouble(a,b));
 
+
         return null;
     }
 
-    public static String getInRadixInt(int number, int radix ){
+    private static String getInRadixInt(int number, int radix ){
         List<Character> digits = getDigitTable();
 
-        if (radix <2 || radix >= digits.size() || number < 0){
+        if (radix <2 || radix >= digits.size()+1 || number < 0){
             throw new IllegalArgumentException();
         }
         StringBuilder valueStr = new StringBuilder();
@@ -27,10 +27,10 @@ public class GetNumberTen {
         return valueStr.toString();
     }
 
-    public static String getInRadixDouble(double number, int radix ){
+    private static String getInRadixDouble(double number, int radix ){
         List<Character> digits = getDigitTable();
 
-        if (radix <2 || radix >= digits.size() || number < 0){
+        if (radix <2 || radix >= digits.size()+1 || number < 0){
             throw new IllegalArgumentException();
         }
         StringBuilder valueStr = new StringBuilder();
