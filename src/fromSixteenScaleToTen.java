@@ -2,26 +2,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class fromSixteenScaleToTen {
-    public static double translateToTen(double number, int radixOrigin){
-        int intPartNumber = getNumberToTenInt((int) number, radixOrigin);
+    public static double translateFromSixteenScaleToTen(String number, int radixOrigin){
+        int intPartNumber = getNumberToTenInt(number, radixOrigin);
         double doublePatrNumber = getNumberToTenDouble(number, radixOrigin);
-
         Double numberTranslate = intPartNumber + doublePatrNumber;
-
-
         return numberTranslate;
     }
 
 
-    private static int getNumberToTenInt(int number, int radixOrigin){
+    private static int getNumberToTenInt(String number, int radixOrigin){
         Integer numberTranslate = 0;
+        number = getIntPart(number);
+        int len = number.length();//Узнать длинну числа (будет 8)
 
-        int len = String.valueOf(Math.abs(number)).length();//Узнать длинну числа (будет 8)
-        int temp_number = number;//создать переменную для теста
         int[] a1 = new int[len];//создать массив с длинной указанной в len
-        for (int i = 0; i < len ; i++){//заполнить массив с конца
-            a1[i] = (int) ((temp_number%10)*Math.pow(radixOrigin,i));//присвоить остаток от деления этому числу
-            temp_number /= 10;//разделить число на 10 что бы дальше считать остатки от деления
+        for (int i = 0; i < len ; i++){//заполнить массив
+            a1[i] = (int) ((getDigitTable().indexOf(number.charAt(i)))*Math.pow(radixOrigin,len - 1-i));
         }
         for (int i = 0; i < len; i++) {
             numberTranslate = numberTranslate + a1[i];
@@ -29,28 +25,31 @@ public class fromSixteenScaleToTen {
         return numberTranslate;
     }
 
-    private static double getNumberToTenDouble(double number, int radixOrigin){
+    private static double getNumberToTenDouble(String number, int radixOrigin){
         Double numberTranslate = 0.0;
-        Integer numberInt = getDoublePart(number);
-        int len = String.valueOf(Math.abs(numberInt)).length();//Узнать длинну числа (будет 8)
-        int temp_number = numberInt;//создать переменную для теста
+        number = getDoublePart(number);
+        int len = number.length();//Узнать длинну числа (будет 8)
         double[] a1 = new double[len];//создать массив с длинной указанной в len
         for (int i = len - 1; i > -1; i--){//заполнить массив с конца
-            a1[i] =  ((temp_number%10)*Math.pow(radixOrigin,-i-1));//присвоить остаток от деления этому числу
-            temp_number /= 10;//разделить число на 10 что бы дальше считать остатки от деления
+            a1[i] =  (((getDigitTable().indexOf(number.charAt(i))))*Math.pow(radixOrigin,-i-1));//присвоить остаток от деления этому числу
         }
         for (int i = 0; i < len; i++) {
-            numberTranslate = (numberTranslate + a1[i]);
+            numberTranslate = numberTranslate + a1[i];
         }
         return numberTranslate;
     }
 
-    private static int getDoublePart(double number){
-        String str_number = String.valueOf(number);
-        String ostatok = str_number.substring(str_number.indexOf(".") + 1);
-        Integer ostatok_int = Integer.valueOf(ostatok);
-        return ostatok_int;
+
+    private static String getDoublePart(String number){
+        String ostatok = number.substring(number.indexOf(".") + 1);
+        return ostatok;
     }
+
+    private static String getIntPart(String number){
+        String ostatok = number.substring(0, number.indexOf("."));
+        return ostatok;
+    }
+
     private static List<Character> getDigitTable(){
         ArrayList<Character> digits = new ArrayList<>();
         for (char i = '0';  i <= '9';  i++){

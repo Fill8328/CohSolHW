@@ -5,20 +5,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println(fromSixteenScaleToTen.translateFromSixteenScaleToTen("123A.0", 13));
+        System.out.println(fromTenScaleTo.fromTenScaleTo(123.123, 16));
+       // fromSixteenScaleToTen.translateFromSixteenScaleToTen("263", 14);
+       // fromSixteenScaleToTen.translateFromSixteenScaleToTen("128", 14);
+        System.out.println(fromTenScaleTo.fromTenScaleTo(701, 14));
 
-      //  System.out.println(toTenScaleFrom.translateToTen(12122.1, 6));
-      //  System.out.println(fromTenScaleTo.fromTenScaleTo(36.36,36));
-        char c = 'Z';
-        System.out.println(getDigitTable().indexOf('Z'));
     }
-    private static List<Character> getDigitTable(){
-        ArrayList<Character> digits = new ArrayList<>();
-        for (char i = '0';  i <= '9';  i++){
-            digits.add(i);
-        }
-        for (char i = 'A';  i <= 'Z';  i++){
-            digits.add(i);
-        }
-        return digits;
-    }
+
+//    public static double manageRadixOrigin(Object number, int radixOrigin, int radixToTranslate) {
+//
+//        return numberTranslate;
+//    }
 }
+

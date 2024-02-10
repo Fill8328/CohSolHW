@@ -5,12 +5,12 @@ public class fromTenScaleTo {
     public static String fromTenScaleTo (double number, int radix){
         double a = number;
         int b = radix;
+        String numberTranslate = getInRadixInt((int)number,radix) +"."+getInRadixDouble(number,radix);
+//        System.out.print(getInRadixInt((int)number,radix) + ",");
+//        System.out.print(getInRadixDouble(number,radix));
+   //     double numberTranslate = Double.parseDouble(Double.parseDouble(getInRadixInt((int)number,radix))+getInRadixDouble(number,radix));
 
-        System.out.print(getInRadixInt((int)a,b) + ",");
-        System.out.print(getInRadixDouble(a,b));
-
-
-        return null;
+        return numberTranslate;
     }
 
     private static String getInRadixInt(int number, int radix ){
