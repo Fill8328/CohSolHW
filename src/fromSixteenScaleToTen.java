@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class fromSixteenScaleToTen {
-    public static double translateFromSixteenScaleToTen(String number, int radixOrigin){
+    public static Double translateFromSixteenScaleToTen(String number, int radixOrigin){
         int intPartNumber = getNumberToTenInt(number, radixOrigin);
         double doublePatrNumber = getNumberToTenDouble(number, radixOrigin);
         Double numberTranslate = intPartNumber + doublePatrNumber;

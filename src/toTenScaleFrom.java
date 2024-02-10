@@ -1,5 +1,5 @@
 public class toTenScaleFrom {
-    public static double translateToTen(double number, int radixOrigin){
+    public static Double translateToTen(double number, int radixOrigin){
         int intPartNumber = getNumberToTenInt((int) number, radixOrigin);
         double doublePatrNumber = getNumberToTenDouble(number, radixOrigin);
 

@@ -8,7 +8,7 @@ public class fromTenScaleTo {
         String numberTranslate = getInRadixInt((int)number,radix) +"."+getInRadixDouble(number,radix);
 //        System.out.print(getInRadixInt((int)number,radix) + ",");
 //        System.out.print(getInRadixDouble(number,radix));
-   //     double numberTranslate = Double.parseDouble(Double.parseDouble(getInRadixInt((int)number,radix))+getInRadixDouble(number,radix));
+ //       double numberTranslate = Double.parseDouble(Double.parseDouble(getInRadixInt((int)number,radix))+getInRadixDouble(number,radix));
 
         return numberTranslate;
     }
