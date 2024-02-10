@@ -3,9 +3,13 @@ import java.util.List;
 
 public class fromTenScaleTo {
     public static String fromTenScaleTo (double number, int radix){
-        double a = number;
-        int b = radix;
-        String numberTranslate = getInRadixInt((int)number,radix) +"."+getInRadixDouble(number,radix);
+        String numberTranslate = null;
+
+        if (getInRadixDouble(number,radix).equals("0")){
+            numberTranslate = getInRadixInt((int)number,radix);
+        } else {
+            numberTranslate = getInRadixInt((int)number,radix) +"."+getInRadixDouble(number,radix);
+        }
 //        System.out.print(getInRadixInt((int)number,radix) + ",");
 //        System.out.print(getInRadixDouble(number,radix));
  //       double numberTranslate = Double.parseDouble(Double.parseDouble(getInRadixInt((int)number,radix))+getInRadixDouble(number,radix));

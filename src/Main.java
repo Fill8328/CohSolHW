@@ -5,20 +5,23 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-      //  System.out.println(fromSixteenScaleToTen.translateFromSixteenScaleToTen("123A.0", 13));
-      //  System.out.println(fromTenScaleTo.fromTenScaleTo(123.123, 16));
-        // fromSixteenScaleToTen.translateFromSixteenScaleToTen("263", 14);
-        // fromSixteenScaleToTen.translateFromSixteenScaleToTen("128", 14);
-      //  System.out.println(fromTenScaleTo.fromTenScaleTo(701, 14));
-
-        System.out.println(fromSixteenScaleToTen.translateFromSixteenScaleToTen("10.0", 16));
-
-      System.out.println( mathOptionsDifferentScale.summOptionsDifferentScale(10.0, 9, 10.0, 9, 10));
-      System.out.println( mathOptionsDifferentScale.summOptionsDifferentScale("12.0", 16, 10.0, 10, 10));
-      System.out.println(mathOptionsDifferentScale.summOptionsDifferentScale(1100.0, 2,"A123.0",16,10));
-        //  Double a = Double.parseDouble("12.12");
-//        System.out.println(Double.parseDouble(convertScale.convertScale(10.0, 9, 10 ).toString()));
-//        System.out.println(mathOptionsDifferentScale.convertObjectToDoubleTenScale(10.0,9));
+        System.out.println(fromTenScaleTo.fromTenScaleTo(4.4,2));
+        System.out.println(convertScale.convertScale(4.0,10,2));
+        System.out.println(convertScale.convertScale(4.04,10,11));
+        System.out.println(convertScale.convertScale(4.04,5,10));
+        System.out.println(convertScale.convertScale(4.04,5,4));
+        System.out.println(convertScale.convertScale(4.0,5,16));
+        System.out.println(convertScale.convertScale("4.0",16,2));
+        System.out.println(convertScale.convertScale("4.0",16,10));
+        System.out.println(convertScale.convertScale("4.0",16,4));
+        System.out.println(convertScale.convertScale("A.0",36,4));
+        System.out.println(convertScale.returnCode(4.0, 10));
+//        System.out.println(fromSixteenScaleToTen.translateFromSixteenScaleToTen("10.0", 16));
+//
+//      System.out.println( mathOptionsDifferentScale.summOptionsDifferentScale(10.0, 9, 10.0, 9, 10));
+//      System.out.println( mathOptionsDifferentScale.summOptionsDifferentScale("12.0", 16, 10.0, 10, 10));
+//      System.out.println(mathOptionsDifferentScale.summOptionsDifferentScale(1100.0, 2,"A123.0",16,10));
+//
 
 //        Object number111 = convertScale.convertScale("12.12",16,10);
 

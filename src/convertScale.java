@@ -1,4 +1,10 @@
 public class convertScale {
+
+    public static String returnCode(Object number, int radixOrigin){
+        String returnNumber = convertScale(number, radixOrigin,2).toString();
+
+        return returnNumber;
+    }
     public static Object convertScale(Object number, int radixOrigin, int radixToTranslate) {
         Object numberTranslate = null;
         if ( radixToTranslate <2 || radixToTranslate > 36){
@@ -17,7 +23,7 @@ public class convertScale {
                 numberTranslate = fromTenScaleTo.fromTenScaleTo((Double) numberTranslateTemp, radixToTranslate);
 
             }
-            if (radixToTranslate >=2){
+            if (radixToTranslate >=10){
                 Object numberTranslateTemp;
                 numberTranslateTemp = toTenScaleFrom.translateToTen((Double) number, radixOrigin);
                 numberTranslate = fromTenScaleTo.fromTenScaleTo((Double) numberTranslateTemp, radixToTranslate);
@@ -29,7 +35,7 @@ public class convertScale {
             if (radixOrigin == 10) {
                 System.out.println("Исходный разряд = 10");
                 if (radixToTranslate<=9){
-                    numberTranslate = Double.parseDouble(fromTenScaleTo.fromTenScaleTo((Double) number, radixToTranslate));
+                    numberTranslate = fromTenScaleTo.fromTenScaleTo((Double)number,radixToTranslate);
                 }
                 if (radixToTranslate >10){
                     numberTranslate = fromTenScaleTo.fromTenScaleTo((Double) number,radixToTranslate);
