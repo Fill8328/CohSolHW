@@ -1,8 +1,22 @@
+import java.util.ArrayList;
+
 public class convertScale {
 
-    public static String returnCode(Object number, int radixOrigin){
-        String returnNumber = convertScale(number, radixOrigin,2).toString();
+    public static Object returnCode(Object number, int radixOrigin){
+        Object returnNumber = convertScale(number, radixOrigin,2);
+        char[] returnCodeTable =returnNumber.toString().toCharArray();
+        for (char c : returnCodeTable) {
+            if (c =='0'){
+                c = '1';
+            } else {
+                    c = '0';
 
+            }
+
+
+            System.out.print(c);
+        }
+        System.out.println();
         return returnNumber;
     }
     public static Object convertScale(Object number, int radixOrigin, int radixToTranslate) {

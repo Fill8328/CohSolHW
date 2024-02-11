@@ -4,9 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) {                          
+        mathOptionsDifferentScale.minysOptionsDifferentScale(10011010000.0,2,1001011100.0,2,10);
         System.out.println(fromTenScaleTo.fromTenScaleTo(4.4,2));
         System.out.println(convertScale.convertScale(4.0,10,2));
+        System.out.println(convertScale.convertScale("4.0",16,2));
+        System.out.println(convertScale.convertScale(4.0,8,2));
         System.out.println(convertScale.convertScale(4.04,10,11));
         System.out.println(convertScale.convertScale(4.04,5,10));
         System.out.println(convertScale.convertScale(4.04,5,4));
@@ -15,7 +18,7 @@ public class Main {
         System.out.println(convertScale.convertScale("4.0",16,10));
         System.out.println(convertScale.convertScale("4.0",16,4));
         System.out.println(convertScale.convertScale("A.0",36,4));
-        System.out.println(convertScale.returnCode(4.0, 10));
+        System.out.println(convertScale.returnCode(4.4, 10));
 //        System.out.println(fromSixteenScaleToTen.translateFromSixteenScaleToTen("10.0", 16));
 //
 //      System.out.println( mathOptionsDifferentScale.summOptionsDifferentScale(10.0, 9, 10.0, 9, 10));
